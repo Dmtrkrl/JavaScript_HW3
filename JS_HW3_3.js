@@ -97,7 +97,7 @@ function getEnterpriseName(enName) {
       } else if (enName === enterprises[i].departments[j].name) {
         console.log(enterprises[i].name);
         break;
-      } else if (enName === enterprises[i].id) {
+      } else if (enName === enterprises[i].id || enName === enterprises[i].name) {
         console.log('this is not a department');
         break;
       }
@@ -110,6 +110,7 @@ function getEnterpriseName(enName) {
 getEnterpriseName('Отдел тестирования');
 getEnterpriseName('Администрация');
 getEnterpriseName('Отдел разработки');
+getEnterpriseName('Предприятие 1');
 getEnterpriseName(6);
 getEnterpriseName(3);
 getEnterpriseName(10);
