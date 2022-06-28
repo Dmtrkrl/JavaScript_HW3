@@ -128,7 +128,7 @@ function addEnterprise(newEnterprise) {
   let lastAdd = enterprises[length - 1].departments.find(element => element.id);
   let lastId = lastAdd.id;
 
-  enterprises.push({ id: lastId + 1, name: newEnterprise, departments: [{ id: Number, name: String, employees_count: Number }] });
+  enterprises.push({ id: lastId + 1, name: newEnterprise, departments: [{ id: Number, name: String, departments: [] }] });
   console.log(enterprises);
 }
 
