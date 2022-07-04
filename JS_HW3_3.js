@@ -171,17 +171,17 @@ editEnterprises(1, 'Новое название предприятия');
 // editDepartment(7, "Новое название отдела")
 
 function editDepartment(addID, newName) {
-  for (i = 0; i < enterprises.length; i++) {
-    let findDepartment = enterprises[i].departments;
-    result = findDepartment.find(element => element.id === addID);
-    if (result) {
-      result.name = newName;
-      console.log(enterprises[i])
+    for (key in enterprises) {
+      let findDepartment = enterprises[key].departments;
+      result = findDepartment.find(element => element.id === addID);
+      if (result) {
+        result.name = newName;
+        console.log(enterprises[key])
+      }
     }
   }
-}
-
-editDepartment(7, 'Новое название отдела');
+  
+  editDepartment(7, 'Новое название отдела');
 
 // 7. Написать функцию для удаления предприятия. В качестве аргумента принимает id предприятия.
 
