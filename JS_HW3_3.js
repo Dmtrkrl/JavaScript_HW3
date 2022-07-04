@@ -204,20 +204,20 @@ deleteEnterpeises(1);
 // Пример:
 // deleteDepartment(3)
 
-function  deleteDepartment (addID)  {  
-   for  (i  =  0;  i <  enterprises.length;  i++)  {
-       let  department  =  enterprises[i].departments;  
-       let  departmentID  =  department.find(element  =>  element.id  ===  addID)
-       departmentIndex   =  department.findIndex(element  =>  element.id  ===  addID);              
-       if  (departmentIndex  != -1)  {       
-           if  (departmentID.employees_count  ===  0)  {     
-            department.splice(departmentIndex,  1);    
-               console.log(enterprises)    
-           } else  {
-               console.log("Error: this department has employees")
-           }      
-       }
-   }    
+function  deleteDepartment (addID)  {  
+  for  (key in enterprises)  {
+      let  department  =  enterprises[key].departments;  
+      let  departmentID  =  department.find(element  =>  element.id  ===  addID)
+      departmentIndex   =  department.findIndex(element  =>  element.id  ===  addID);              
+      if  (departmentIndex  != -1)  {       
+          if  (departmentID.employees_count  ===  0)  {     
+           department.splice(departmentIndex,  1);    
+              console.log(enterprises)    
+          } else  {
+              console.log("Error: this department has employees")
+          }      
+      }
+  }    
 }
 deleteDepartment(10);
 
