@@ -226,21 +226,16 @@ deleteDepartment(10);
 // Пример:
 // moveEmployees(2, 3)
 
-function  moveEployees (idFrom,  idTo)  {    
-   for  (i  =  0;  i <  enterprises.length;  i++)  {  
-       let  department  =  enterprises[i].departments;    
-       let  findFrom  =  department.find(element  =>  element.id  ===  idFrom);  
-       let  findTo  =  department.find(element  =>  element.id  ===  idTo);          
-       if  (findFrom  !=  undefined)  {    
-           if  (findTo !=  undefined) {    
-               findTo.employees_count  +=  findFrom.employees_count;    
-               findFrom.employees_count  =  0;    
-               console.log(department)  
-           }  
-           else  {    
-               console.log("Error: different enterprises")  
-           }
-       }
-   }      
-}  
-moveEployees(2, 3)
+function  moveEployees (idFrom,  idTo)  {    
+    for  (key in enterprises)  {  
+        let  department  =  enterprises[key].departments;    
+        let  findFrom  =  department.find(element  =>  element.id  ===  idFrom);  
+        let  findTo  =  department.find(element  =>  element.id  ===  idTo);          
+        if  (findFrom  &&  findTo)  {    
+                findTo.employees_count  +=  findFrom.employees_count;    
+                findFrom.employees_count  =  0;    
+                console.log(department)  
+        }
+    }      
+ }  
+ moveEployees(2, 3)
