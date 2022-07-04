@@ -88,33 +88,30 @@ company();
 // getEnterpriseName(4) // Предприятие 1
 // getEnterpriseName("Отдел маркетинга") // Предприятие 2
 
-function getEnterpriseName(enName) {
-  for (let i = 0; i < enterprises.length; i++) {
-    for (let j = 0; j < enterprises[i].departments.length; j++) {
-      if (enName === enterprises[i].departments[j].id) {
-        console.log(enterprises[i].name);
-        break;
-      } else if (enName === enterprises[i].departments[j].name) {
-        console.log(enterprises[i].name);
-        break;
-      } else if (enName === enterprises[i].id || enName === enterprises[i].name) {
-        console.log('this is not a department');
-        break;
+  function getEnterpriseName(enName) {
+    for (let i = 0; i < enterprises.length; i++) {
+      for (let j = 0; j < enterprises[i].departments.length; j++) {
+        if (enName === enterprises[i].departments[j].id || enName === enterprises[i].departments[j].name) {
+          console.log(enterprises[i].name);
+          break;
+        } else if (enName === enterprises[i].id || enName === enterprises[i].name) {
+          console.log('this is not a department');
+          break;
+        }
       }
+  
     }
-
+  
   }
-
-}
-
-getEnterpriseName('Отдел тестирования');
-getEnterpriseName('Администрация');
-getEnterpriseName('Отдел разработки');
-getEnterpriseName('Предприятие 1');
-getEnterpriseName(6);
-getEnterpriseName(3);
-getEnterpriseName(10);
-getEnterpriseName(1);
+  
+  getEnterpriseName('Отдел тестирования');
+  getEnterpriseName('Администрация');
+  getEnterpriseName('Отдел разработки');
+  getEnterpriseName('Предприятие 1');
+  getEnterpriseName(6);
+  getEnterpriseName(3);
+  getEnterpriseName(10);
+  getEnterpriseName(1);
 
 
 
