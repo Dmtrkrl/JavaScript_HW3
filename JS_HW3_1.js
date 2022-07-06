@@ -82,10 +82,9 @@ const users = [
     },
 ];
 
-function regDate(regDate_1, regDate_2) {
-    regDate_1 = users.filter(date => date.registrationDate == '09.10.2021');
-    regDate_2 = users.filter(date => date.registrationDate == '10.10.2021');
-    console.log(regDate_1, regDate_2);
+function regDate(data) {
+    data = users.filter(date => (date.registrationDate == '09.10.2021' || date.registrationDate == '10.10.2021'));
+    console.log(data);
 }
 regDate();
 
