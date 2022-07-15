@@ -68,19 +68,19 @@ const enterprises = [
 // Предприятие 3 (нет сотрудников)
 // - Отдел аналитики (нет сотрудников)
 
-function company() {
-  for (let i = 0; i < enterprises.length; i++) {
-    let summ = 0;
-    for (let j = 0; j < enterprises[i].departments.length; j++) {
-      summ += enterprises[i].departments[j].employees_count;
-    }
-    console.log(`${enterprises[i].name} (${summ} сотрудников)`);
-    for (let j = 0; j < enterprises[i].departments.length; j++) {
-      console.log(`- ${enterprises[i].departments[j].name} (${enterprises[i].departments[j].employees_count} сотрудников)`);
-    };
-  }
-}
-company();
+ function company() {
+     for (key_1 in enterprises) {
+         let summ = 0;
+         let newArr = [];
+         for (key_2 in enterprises[key_1].departments) {
+             summ += enterprises[key_1].departments[key_2].employees_count;
+             newArr.push(`- ${enterprises[key_1].departments[key_2].name} (${enterprises[key_1].departments[key_2].employees_count} сотрудников)`);
+         }
+         console.log(`${enterprises[key_1].name} (${summ} сотрудников)`);
+         console.log(newArr.join('\r\n'));
+     }
+ }
+ company();
 
 // 2. Написать функцию, которая будет принимать 1 аргумент (id отдела или название отдела и возвращать название предприятия, к которому относится).
 
